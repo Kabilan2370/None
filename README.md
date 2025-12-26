@@ -13,9 +13,11 @@ Prerequisites, if we want to setup docker swarm
 
 Once setup the prerequesites init the docker swarm then a join token will be shown
 
-    sudo docker swarm init
+    sudo docker swarm init --advertise-addr 172.30.118.228
 
-Eg: 
+Eg: docker swarm join --token SWMTKN-1-0mhdweqogeu960mwdkhzjae1w7cjnhxn5y2w139h38ozaz70rv-eoaqlnnb7wprevlug0xwbqhty 172.30.118.228:2377
+sudo docker swarm leave --force
+
 
 ### 2. How the worker node can join into docker swarm masternode ?
 The master note should that token to invite the worker nodes
