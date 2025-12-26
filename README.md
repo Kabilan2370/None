@@ -15,7 +15,6 @@ Once setup the prerequesites init the docker swarm then a join token will be sho
 
     sudo docker swarm init --advertise-addr 172.30.118.228
 
-![image](1.png)
 
 Eg: docker swarm join --token SWMTKN-1-0mhdweqogeu960mwdkhzjae1w7cjnhxn5y2w139h38ozaz70rv-eoaqlnnb7wprevlug0xwbqhty 172.30.118.228:2377
 sudo docker swarm leave --force
@@ -24,11 +23,13 @@ sudo docker swarm leave --force
 ### 2. How the worker node can join into docker swarm masternode ?
 The master note should that token to invite the worker nodes
 
-    sudo docker swarm join --token <> <master-ip>:2377
+    sudo docker swarm join --token SWMTKN-1-0mhdweqogeu960mwdkhzjae1w7cjnhxn5y2w139h38ozaz70rv-eoaqlnnb7wprevlug0xwbqhty 172.30.118.228:2377
 
 to verify the worker node has joined or not
 
     sudo docker node ls
+
+![image](1.png)
 
 ### 3. we can check the running and stopped container list using "docker ps -a" command
 To check the docker swarm container we can check using docker service command
@@ -39,15 +40,20 @@ To check the docker swarm container we can check using docker service command
     -p 80:80 \
     nginx:latest
 
+![image](2.png)
+
 We can check and list out the swarm service containers
 
     sudo docker service ls
     sudo docker service ps app1
 
+![image](3.png)
+
 ### 4. We can scale the service, using 
 
     sudo docker service scale app1=5
 
+![image](4.png)
 
 ### 5. What is Cron ?
 Cron is a time-based job scheduler in Unix-like operating systems (Linux, macOS) that automates repetitive tasks by running commands or scripts at specified intervals, 
@@ -59,3 +65,11 @@ In Docker Swarm, you can implement cron jobs using a few different approaches, a
 
 ###  Running Cron Inside a Container
 This traditional approach involves packaging the cron daemon and your scripts within a single Docker image and keeping the container alive by running cron in the foreground. 
+
+### 7. Using docker swarm with cronjob I created a dockerfile to launch a container.
+
+![image](5.png)
+![image](6.png)
+![image](7.png)
+![image](8.png)
+![image](9.png)
