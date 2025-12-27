@@ -69,7 +69,17 @@ This traditional approach involves packaging the cron daemon and your scripts wi
 ### 7. Using docker swarm with cronjob I created a dockerfile to launch a container.
 
 ![image](5.png)
+
+### 8. Using these dockerfile and cron.sh I have created a docker image to launch the containers.
+
 ![image](6.png)
+
 ![image](7.png)
+
+### 9. I have launched docker conainer using docker service command with replica 2.
+
 ![image](8.png)
+
+### 10. Finally I have created and launched docker compose file to run the container on worker nodes.
+
 ![image](9.png)
